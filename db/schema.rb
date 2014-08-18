@@ -18,9 +18,9 @@ ActiveRecord::Schema.define(version: 20140818020722) do
     t.integer  "amount"
     t.string   "description"
     t.string   "currency"
-    t.string   "customer"
+    t.string   "customer_id"
     t.string   "card"
-    t.integer  "product"
+    t.integer  "product_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
