@@ -11,6 +11,8 @@ gem 'bootstrap-sass'
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 # Figaro gem for securely managing credentials
 gem 'figaro'
+# Letter Opener for development
+gem 'letter_opener', group: :development
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
