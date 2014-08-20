@@ -13,6 +13,10 @@ gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 gem 'figaro'
 # Letter Opener for development
 gem 'letter_opener', group: :development
+# Add ActiveAdmin
+gem 'activeadmin', github: 'gregbell/active_admin'
+gem 'devise'
+gem 'Active'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
