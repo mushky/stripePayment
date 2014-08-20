@@ -19,6 +19,7 @@ Rails.application.configure do
   # Send emails using letter opener in dev mode to open emails in a browser
   config.action_mailer.delivery_method = :letter_opener
 
+
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 
