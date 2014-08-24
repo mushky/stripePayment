@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" /> 
+  <title>Appbanc Order</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- stylesheets -->
+  <link rel="stylesheet" type="text/css" href="css/compiled/theme.css">
+
+  <!-- javascript -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="js/bootstrap/bootstrap.min.js"></script>
+  <script src="js/theme.js"></script>
+
+  <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+      <![endif]-->
+</head>
+  <body>
+    <center>
+    <img src="images/wowLens.jpg" HEIGHT="300" WIDTH="300"><br><br>
+    <%= form_tag charges_path, id: 'chargeForm' do %>
+      <script src="https://checkout.stripe.com/checkout.js"></script>
+      <%= hidden_field_tag 'stripeToken' %>
+      <%= hidden_field_tag 'stripeEmail' %>  
+      <%= hidden_field_tag 'amount', 9999 %>
+    		<button id="btn-buy" type="button" class="btn-lg btn-success">Order Now</button>
+    		<script>
+    		var handler = StripeCheckout.configure({
+    			key: '<%= Rails.configuration.stripe[:publishable_key] %>',
+    			token: function(token, arg) {
+    				document.getElementById("stripeToken").value = token.id;
+    				document.getElementById("stripeEmail").value = token.email;
+    				document.getElementById("chargeForm").submit();
+    			}
+    		});
+    		document.getElementById('btn-buy').addEventListener('click', function(e) {
+    			handler.open({
+    				name: 'AppBanc',
+    				description: 'Ordering Wow Lens',
+    				amount: document.getElementById('amount').value
+    			});
+    			e.preventDefault();
+    		})
+    	</script>
+    	<% end %>
+    </center>
+    </body>
+

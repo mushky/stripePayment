@@ -1,26 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <title>StripePayment</title>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, user-scalable=no">
-    <title>One Month Growth Hacking</title>
-    <link rel="stylesheet" href="css/lib/bootstrap.min.css">
-    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300,800' >
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-<div id="content" class="container">
-    <header id="content-header">
-        <div id="price-container">
-          <span class="glyphicon glyphicon-tag"></span><span class="price">$4.99</span>
-        </div>
-        <%= image_tag('header-image.jpg', id:'content-header-img',alt: 'Learn Growth Hacking') %>
-    </header>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>  
+  <title>Appbanc</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- stylesheets -->
+
+  <link rel="stylesheet" type="text/css" href="css/compiled/theme.css">
+  <link rel="stylesheet" type="text/css" href="css/vendor/animate.css">
+
+  <!-- javascript -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="js/bootstrap/bootstrap.min.js"></script>
+  <script src="js/theme.js"></script>
+  <script type="text/javascript" src="https://js.stripe.com/v1/"></script>
+
+  <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+      <![endif]-->
+    </head>
+    <body id="home">
+      <header class="navbar navbar-inverse normal" role="banner">
+        <div class="container">
+          <div class="navbar-header">
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a href="home.html" class="navbar-brand">Appbanc</a>
+          </div>
+          <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+            <ul class="nav navbar-nav navbar-right">
+            </li>
+            <li><a href="#">About</a></li>
+            <li><a href="contactus.html">Contact</a></li>
+            <li><a href="#">Product</a></li>
+            <li><a href="http://www.appbanc.com/blog">Blog</a></li>
+          </ul>
+        </li>
+      </li>
+    </ul>
+  </nav>
+</div>
+</header>
   <%= yield %>
   </div>
 </body>
